@@ -92,6 +92,7 @@
     <Compile Include="RelyingParty\DirectRequest.cs" />
     <Compile Include="RelyingParty\DirectResponse.cs" />
     <Compile Include="RelyingParty\FailedAuthenticationResponse.cs" />
+    <Compile Include="RelyingParty\TextBoxNoNameContainer.cs" />
     <Compile Include="UntrustedWebRequest.cs" />
     <Compile Include="UntrustedWebResponse.cs" />
     <Compile Include="RelyingParty\IAuthenticationRequest.cs" />

@@ -71,8 +71,8 @@ namespace DotNetOpenId.RelyingParty
 		/// </summary>
 		protected virtual void InitializeControls()
 		{
-			wrappedTextBox = new TextBox();
-			wrappedTextBox.ID = "wrappedTextBox";
+			wrappedTextBox = new TextBoxNoNameContainer();
+			wrappedTextBox.ID = "openid_identifier";
 			wrappedTextBox.CssClass = cssClassDefault;
 			wrappedTextBox.Columns = columnsDefault;
 			wrappedTextBox.Text = text;
