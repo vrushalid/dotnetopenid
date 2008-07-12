@@ -79,6 +79,18 @@ namespace DotNetOpenId.RelyingParty
 			wrappedTextBox.TabIndex = TabIndexDefault;
 		}
 
+		protected override ControlCollection CreateControlCollection() {
+			return NamingConfiguration.Provider.CreateControlCollection(this);
+		}
+
+		protected override Control FindControl(string id, int pathOffset) {
+			Control ctrl = base.FindControl(id, pathOffset);
+			if (ctrl == null) {
+				ctrl = NamingConfiguration.Provider.FindControl(this, id, pathOffset);
+			}
+			return ctrl;
+		}
+
 		/// <summary>
 		/// Whether the text box should receive input focus when the web page appears.
 		/// </summary>

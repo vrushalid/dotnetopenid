@@ -88,10 +88,14 @@
     <Compile Include="RelyingParty\CheckAuthResponse.cs" />
     <Compile Include="RelyingParty\ApplicationMemoryStore.cs" />
     <Compile Include="RelyingParty\IProviderEndpoint.cs" />
+    <Compile Include="RelyingParty\NamingConfiguration.cs" />
+    <Compile Include="RelyingParty\NamingContainerControlCollection.cs" />
+    <Compile Include="RelyingParty\NamingProvider.cs" />
     <Compile Include="RelyingParty\OpenIdMobileTextBox.cs" />
     <Compile Include="RelyingParty\DirectRequest.cs" />
     <Compile Include="RelyingParty\DirectResponse.cs" />
     <Compile Include="RelyingParty\FailedAuthenticationResponse.cs" />
+    <Compile Include="RelyingParty\ShortIDsProvider.cs" />
     <Compile Include="RelyingParty\TextBoxNoNameContainer.cs" />
     <Compile Include="UntrustedWebRequest.cs" />
     <Compile Include="UntrustedWebResponse.cs" />
