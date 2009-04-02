@@ -440,6 +440,8 @@ namespace DotNetOpenAuth.Messaging {
 
 			ErrorUtilities.VerifyHttpContext();
 
+			Contract.Assume(HttpContext.Current.Request.Url != null);
+			Contract.Assume(HttpContext.Current.Request.RawUrl != null);
 			return new HttpRequestInfo(HttpContext.Current.Request);
 		}
 
@@ -506,6 +508,9 @@ namespace DotNetOpenAuth.Messaging {
 				}
 
 				responseFields = this.ReadFromResponseCore(response);
+				if (responseFields == null) {
+					return null;
+				}
 
 				responseMessage = this.MessageFactory.GetNewResponseMessage(request, responseFields);
 				if (responseMessage == null) {
@@ -730,6 +735,7 @@ namespace DotNetOpenAuth.Messaging {
 
 			MessageProtections appliedProtection = MessageProtections.None;
 			foreach (IChannelBindingElement bindingElement in this.outgoingBindingElements) {
+				Contract.Assume(bindingElement.Channel != null);
 				MessageProtections? elementProtection = bindingElement.ProcessOutgoingMessage(message);
 				if (elementProtection.HasValue) {
 					Logger.Bindings.DebugFormat("Binding element {0} applied to message.", bindingElement.GetType().FullName);
