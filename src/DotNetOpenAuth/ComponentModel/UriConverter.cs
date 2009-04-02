@@ -41,8 +41,9 @@ namespace DotNetOpenAuth.ComponentModel {
 		/// </returns>
 		public override bool IsValid(ITypeDescriptorContext context, object value) {
 			string stringValue;
-			if (value is Uri) {
-				return ((Uri)value).IsAbsoluteUri;
+			Uri uriValue;
+			if ((uriValue = value as Uri) != null) {
+				return uriValue.IsAbsoluteUri;
 			} else if ((stringValue = value as string) != null) {
 				Uri result;
 				return stringValue.Length == 0 || Uri.TryCreate(stringValue, UriKind.Absolute, out result);
